@@ -5,16 +5,16 @@ Feature: Header
     When  Clicks on "<header>" button in the "header"
     Then Should be navigated to "<header>" page
     Examples:
-      | header       |  |
-      | Kampaniyalar |  |
-      | Mağazalar    |  |
-      | Korporativ   |  |
-      | Samsung      |  |
-      | Apple        |  |
-      | Outlet       |  |
+      | header       |
+      | Kampaniyalar |
+      | Mağazalar    |
+      | Korporativ   |
+      | Samsung      |
+      | Apple        |
+      | Outlet       |
 
 
-    Scenario: Availability of language in options
+  Scenario: Availability of language in options
       Given User is in "irshad.az" website
       When Hovers mouse over "language" button
       Then Should language options

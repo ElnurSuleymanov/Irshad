@@ -1,8 +1,11 @@
 import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+@CucumberOptions( features = {"classpath:features"}  , tags = "@social")
 
 public class TestRunner extends AbstractTestNGCucumberTests  {
+
     @BeforeClass
     public void beforeClass(){System.out.println("TEST BASLADI");}
 

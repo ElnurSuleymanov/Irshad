@@ -19,10 +19,7 @@ public class HeaderSteps  extends BaseMethods{
 
 
 
-    @Given("User is in {string} website")
-    public void userIsInWebsite (String website ){
 
-    }
 
 
 
