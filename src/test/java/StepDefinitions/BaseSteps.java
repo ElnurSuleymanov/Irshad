@@ -27,17 +27,12 @@ public class BaseSteps extends BaseMethods {
     @Then("Should be navigated to {string} page")
     public void shouldBeNavigatedToPage(String expected) throws InterruptedException {
         String actualUrl = driver.getCurrentUrl();
-        String expectedMagazalar = "magazalar";
-        String expectedHaqqimizda = "haqqimizda";
-        String expectedSertlerimiz = "sertlerimiz";
-        String expectedCatdirilmaQaydalari = "catdirilma-qaydalari";
-        String expectedBonuslardanIstifadeQaydalari = "bonuslardan-istifade-qaydalari";
-
         switch(expected) {
             case "Kampaniyalar" :
                 Assert.assertTrue(actualUrl.contains(expected.toLowerCase()));
                 break;
             case "Mağazalar" :
+                String expectedMagazalar = "magazalar";
                 Assert.assertTrue(actualUrl.contains(expectedMagazalar.toLowerCase()));
                 break;
             case "Korporativ" :
@@ -53,44 +48,58 @@ public class BaseSteps extends BaseMethods {
                 Assert.assertTrue(actualUrl.contains(expected.toLowerCase()));
                 break;
             case "Haqqımızda" :
+                String expectedHaqqimizda = "haqqimizda";
                 Assert.assertTrue(actualUrl.contains(expectedHaqqimizda.toLowerCase()));
                 break;
             case "Vakansiyalar":
                 Assert.assertTrue(actualUrl.contains(expected.toLowerCase()));
                 break;
             case "Şərtlərimiz":
+                String expectedSertlerimiz = "sertlerimiz";
                 Assert.assertTrue(actualUrl.contains(expectedSertlerimiz.toLowerCase()));
                 break;
             case "Çatdırılma qaydaları" :
+                String expectedCatdirilmaQaydalari = "catdirilma-qaydalari";
                 Assert.assertTrue(actualUrl.contains(expectedCatdirilmaQaydalari.toLowerCase()));
                 break;
             case "Bonuslardan istifadə qaydaları" :
+                String expectedBonuslardanIstifadeQaydalari = "bonuslardan-istifade-qaydalari";
                 Assert.assertTrue(actualUrl.contains(expectedBonuslardanIstifadeQaydalari.toLowerCase()));
                 break;
-
-
-
             case "ŞadKart" :
+                String expectedSadKart = "sadkart";
+                Assert.assertTrue(actualUrl.contains(expectedSadKart.toLowerCase()));
                 break;
             case "Sual-Cavab" :
+                Assert.assertTrue(actualUrl.contains(expected.toLowerCase()));
                 break;
             case "Hissə-hissə ödəniş" :
+                String expectedHisseHisseOdenis = "hisse-hisse-odenis";
+                Assert.assertTrue(actualUrl.contains(expectedHisseHisseOdenis.toLowerCase()));
                 break;
             case "Məxfilik siyasəti" :
+                String expectedMexfilikSiyaseti = "mexfilik-siyaseti";
+                Assert.assertTrue(actualUrl.contains(expectedMexfilikSiyaseti.toLowerCase()));
                 break;
             case "Korporativ satışlar" :
+                String expectedKorporativSatislar = "korporativ-satislar";
+                Assert.assertTrue(actualUrl.contains(expectedKorporativSatislar.toLowerCase()));
                 break;
             case "İstifadə qaydaları" :
+                String expectedIstifadeGaydalari = "istifade-qaydalari";
+                Assert.assertTrue(actualUrl.contains(expectedIstifadeGaydalari.toLowerCase()));
                 break;
             case "Bloq" :
+                Assert.assertTrue(actualUrl.contains(expected.toLowerCase()));
                 break;
             case "Şikayət və təkliflər" :
+                String expectedSikayetVeTeklifler ="sikayet-ve-teklifler";
+                Assert.assertTrue(actualUrl.contains(expectedSikayetVeTeklifler.toLowerCase()));
                 break;
             default:
                 System.out.println("Duzgun navigate olunmadi !!!! ");
+                break;
         }
-
-
     }
 }
 
