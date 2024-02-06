@@ -101,6 +101,16 @@ public class BaseSteps extends BaseMethods {
                 break;
         }
     }
+ @And("Hovers mouse over {string} buttons")
+    public void hoversMouseOverButtons(String kataloqElement) throws InterruptedException {
+        WebElement element = getElement(By.xpath("//*[@class='menu-section']//span//img[@alt='"+kataloqElement+"']"));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element).perform();
+        Thread.sleep(3000);
+//        Alert alert = driver.switchTo().alert();
+//        alert.accept();
+
+    }
 }
 
 
