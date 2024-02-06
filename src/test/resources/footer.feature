@@ -31,6 +31,23 @@ Feature: Footer
       | Şikayət və təkliflər   |
 
 
+@social
+  Scenario Outline: Checking social media buttons
+    Given User is in "irshad.az" website
+    When Clicks on "<Social Media>" button on the section "Bizi izleyin"
+    Then User in on "<Social Media>" page
+    Examples:
+      | Social Media |
+      | Facebook     |
+      | Instagram    |
+      | Youtube      |
+      | Whatsapp     |
+      | Telegram     |
+      | Tiktok       |
+      | Linkedin     |
+      | Twitter      |
+
+
 
 
 
