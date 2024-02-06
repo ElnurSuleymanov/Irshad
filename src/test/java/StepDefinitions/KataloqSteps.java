@@ -1,5 +1,16 @@
-public class KataloqSteps extends BaseMethods{
-    
+package StepDefinitions;
+
+import StepDefinitions.BaseMethods;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
+public class KataloqSteps extends BaseMethods {
+
     @When("Clicks on Kataloq button")
     public void userClicksInKataloqButton() throws InterruptedException {
         getElement(By.className("burger-menu")).click();
@@ -8,11 +19,10 @@ public class KataloqSteps extends BaseMethods{
 
     @Then("Dropdown menu should be shown")
     public void dropdownMenuShouldBeShown() {
-       WebElement element =  getElement(By.className("menu"));
+        WebElement element = getElement(By.className("menu"));
         Assert.assertTrue(element.isDisplayed());
 
     }
-
 
 
     @Then("{string} items dropdown menu should be shown")
@@ -24,12 +34,15 @@ public class KataloqSteps extends BaseMethods{
 
     @And("Clicks on {string} button in the Kataloq dropdown")
     public void clicksOnButtonInTheKataloqDropdown(String element2) {
-        WebElement element = getElement(By.xpath("//*[@class='menu-section']//span//img[@alt='"+element2+"']"));
-        element.click();
+        WebElement element = getElement(By.xpath("//*[@class='menu-section']//span//img[@alt='" + element2 + "']"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
 
     }
 
     @Then("User should be navigated to the {string} page")
-    public void userShouldBeNavigatedToThePage(String page) {
+    public void userShouldBeNavigatedToThePage(String page) throws InterruptedException {
         Assert.assertTrue(getElement(By.className("campaigns-inner__body")).isDisplayed());
+
     }
+}

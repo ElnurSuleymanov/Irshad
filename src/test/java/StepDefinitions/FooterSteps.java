@@ -1,6 +1,17 @@
 package StepDefinitions;
 
-public class FooterSteps {
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
+import java.util.ArrayList;
+
+import static driverSession.CucucmberHook.driver;
+
+public class FooterSteps extends BaseMethods {
 @When("Clicks on {string} button on the section {string}")
     public void clicksOnButtonOntheSection(String socialBTN, String s2) throws InterruptedException {
        WebElement element = getElement(By.xpath("//div[@class='footer__contacts__social__icons']//a[@aria-label ='"+socialBTN.toLowerCase()+"']"));
@@ -10,10 +21,9 @@ public class FooterSteps {
 
     @Then("User in on {string} page")
     public void userInOnPage(String expected) throws InterruptedException {
-        ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
         String currentUrl = driver.getCurrentUrl();
-        System.out.println(currentUrl);
          Thread.sleep(5000);
         switch (expected) {
             case "Facebook":

@@ -1,10 +1,16 @@
 package StepDefinitions;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class BaseSteps extends BaseMethods {
@@ -103,15 +109,49 @@ public class BaseSteps extends BaseMethods {
     }
  @And("Hovers mouse over {string} buttons")
     public void hoversMouseOverButtons(String kataloqElement) throws InterruptedException {
+     Thread.sleep(3000);
         WebElement element = getElement(By.xpath("//*[@class='menu-section']//span//img[@alt='"+kataloqElement+"']"));
         Actions actions = new Actions(driver);
         actions.moveToElement(element).perform();
-        Thread.sleep(3000);
-//        Alert alert = driver.switchTo().alert();
-//        alert.accept();
+
+
+ }
+
+    @And("Puts the value from {string} to {string} the price")
+    public void putsTheValueFromToThePrice(String from, String to) throws InterruptedException {
+//        WebElement elementFrom = getElement(By.xpath("//*[@class='products__filter__item__price']//input[1]"));
+//        WebElement elementTo = getElement(By.xpath("//*[@class='products__filter__item__price']//input[2]"));
+//        elementFrom.sendKeys(from);
+//        elementTo.sendKeys(to);
+//        Thread.sleep(15000);  ///////////////////////////////
+//        System.out.println(from + "   " + to);
 
     }
+
+    @Then("Items in the page should be ordered according from {string} to {string}")
+    public void itemsInThePageShouldBeOrderedAccordingFromTo(Double from, Double to) throws InterruptedException {
+//     List<WebElement> items = new ArrayList<>(getElements(By.cssSelector(".product.first")));
+//     WebElement productPrice = getElement(By.className("new-price")) ;
+//     Double price ;
+//     for ( WebElement element : items){
+//         price = Double.parseDouble(element.getText().replace("AZN",""));
+//         System.out.println(price);
+//         Assert.assertTrue((from < price) && (price < to));
+//     }
+//     Thread.sleep(10000);
+    }
+
+    @And("Choose {string} in the Brend checkbox")
+    public void chooseInTheBrendCheckbox(String expectedBrend) {
+     List<WebElement>brends = new ArrayList<>(
+             getElements(By.xpath("//*[@class='products__filter__item__body products__filter__item__body--scroll']//input[@name='brand']")));
+     System.out.println(brends.size() + "--------------------");
+     for (WebElement element : brends) {
+         System.out.println(element.getText());
+     }
+    }
 }
+
 
 
 
