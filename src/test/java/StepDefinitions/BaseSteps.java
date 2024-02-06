@@ -8,6 +8,13 @@ import org.testng.Assert;
 
 
 public class BaseSteps extends BaseMethods {
+
+ @Given("User is in {string} website")
+    public void userIsInWebsite (String website ){
+
+    }
+
+
     @When("Clicks on {string} button in the {string}")
     public void clicksOnButtonInTheHeader(String expected, String s2) throws InterruptedException {
         WebElement element = getElement(By.xpath("//div[@class='container-fluid']//ul//li//a[@aria-label='" + expected + "']"));
