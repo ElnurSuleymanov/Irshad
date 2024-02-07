@@ -15,8 +15,8 @@ Feature: MobilTelefonlar
 #     | Samsung |
 #     | Xiaomi  |
 #     | Google  |
-
-
+#
+#
 #   Scenario Outline: Check Qiymət aralığı section in the Mobil Telefonlar Ve Aksesuarlar page
 #     Given User is in "irshad.az" website
 #     When Clicks on Kataloq button
@@ -33,15 +33,31 @@ Feature: MobilTelefonlar
 #       | 1500 | 2000 |
 #       | 2000 | 2500 |
 #       | 2500 | 5000 |
+#
+#  Scenario Outline: Check Brend checkbox in the Telefon Ve Aksesuarlar page
+#    Given User is in "irshad.az" website
+#    When Clicks on Kataloq button
+#    And Hovers mouse over "Telefon və aksesuarlar" buttons
+#    And Clicks on the Mobil telefonlar button
+#    And Choose "<Brend>" in the Brend checkbox
+#    Examples:
+#      | Brend   |
+#      | Apple   |
+#      | Samsung |
 
-  Scenario Outline: Check Brend checkbox in the Telefon Ve Aksesuarlar page
+
+
+
+  Scenario Outline: Check credit offers in Telefon Ve Aksesuarlar page
     Given User is in "irshad.az" website
     When Clicks on Kataloq button
     And Hovers mouse over "Telefon və aksesuarlar" buttons
     And Clicks on the Mobil telefonlar button
-    And Choose "<Brend>" in the Brend checkbox
+    And Clicks on the "<Ayliq>" button in the item's description
     Examples:
-      | Brend |
-      | Apple |
+      | Ayliq |
+      | 6     |
+      | 12    |
+      | 18    |
 
 

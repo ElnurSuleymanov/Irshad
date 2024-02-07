@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82c444ab-f04b-4b85-b199-bc12f329e760" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/BodySteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/SebeteElaveEtSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/body.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/sebeteElavəEt.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinitions/BaseSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/BaseSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinitions/FooterSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/FooterSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinitions/KataloqSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/KataloqSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinitions/MobilTelefonlarSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/MobilTelefonlarSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/header.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/header.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/mobilTelefonlar.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/mobilTelefonlar.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

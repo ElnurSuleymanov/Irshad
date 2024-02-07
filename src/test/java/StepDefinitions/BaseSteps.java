@@ -1,8 +1,10 @@
 package StepDefinitions;
+import io.cucumber.java.bs.A;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.eo.Do;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -119,36 +121,85 @@ public class BaseSteps extends BaseMethods {
 
     @And("Puts the value from {string} to {string} the price")
     public void putsTheValueFromToThePrice(String from, String to) throws InterruptedException {
-//        WebElement elementFrom = getElement(By.xpath("//*[@class='products__filter__item__price']//input[1]"));
-//        WebElement elementTo = getElement(By.xpath("//*[@class='products__filter__item__price']//input[2]"));
-//        elementFrom.sendKeys(from);
-//        elementTo.sendKeys(to);
-//        Thread.sleep(15000);  ///////////////////////////////
-//        System.out.println(from + "   " + to);
+        Thread.sleep(3000);
+        WebElement priceFilter = driver.findElement(By.xpath("//div[@class='products__filter__item__price']"));
+        Thread.sleep(2000);
+        WebElement startPriceInput = priceFilter.findElement(By.xpath("//input[@placeholder='36 AZN']"));
+        startPriceInput.clear();
+        startPriceInput.sendKeys(String.valueOf(from));
+        Thread.sleep(2000);
+        WebElement endPriceInput = priceFilter.findElement(By.xpath("//input[@placeholder='4450 AZN']"));
+        endPriceInput.clear();
+        endPriceInput.sendKeys(String.valueOf(to));
+        Thread.sleep(3000);
+
 
     }
 
     @Then("Items in the page should be ordered according from {string} to {string}")
-    public void itemsInThePageShouldBeOrderedAccordingFromTo(Double from, Double to) throws InterruptedException {
-//     List<WebElement> items = new ArrayList<>(getElements(By.cssSelector(".product.first")));
-//     WebElement productPrice = getElement(By.className("new-price")) ;
-//     Double price ;
-//     for ( WebElement element : items){
-//         price = Double.parseDouble(element.getText().replace("AZN",""));
-//         System.out.println(price);
-//         Assert.assertTrue((from < price) && (price < to));
-//     }
-//     Thread.sleep(10000);
+    public void itemsInThePageShouldBeOrderedAccordingFromTo(String from, String to)  {
+     List<WebElement> items = new ArrayList<>(getElements(By.cssSelector(".product.first")));
+     List<WebElement> productPrice = getElements(By.cssSelector(".new-price"));
+     double price ;
+     double startPrice = Double.parseDouble(from);
+     double endPrice  = Double.parseDouble(to);
+     for ( WebElement element : productPrice){
+         price = Double.parseDouble(element.getText().replace("AZN",""));
+
+         Assert.assertTrue((startPrice < price) && (price < endPrice));
+     }
     }
 
     @And("Choose {string} in the Brend checkbox")
-    public void chooseInTheBrendCheckbox(String expectedBrend) {
-     List<WebElement>brends = new ArrayList<>(
-             getElements(By.xpath("//*[@class='products__filter__item__body products__filter__item__body--scroll']//input[@name='brand']")));
-     System.out.println(brends.size() + "--------------------");
-     for (WebElement element : brends) {
-         System.out.println(element.getText());
-     }
+    public void chooseInTheBrendCheckbox(String expectedBrend) throws InterruptedException {
+        Thread.sleep(2000);
+        WebElement container = getElement(By.xpath("//*[@id='ProductList']/div/div/div[1]/form/fieldset[3]/div"));
+        Thread.sleep(2000);
+        List<WebElement> productList = container.findElements(By.tagName("label"));
+        System.out.println(productList.size());
+        Thread.sleep(2000);
+
+        for (WebElement inputElement : productList) {
+            Thread.sleep(2000);
+            System.out.println(inputElement.getText());
+            if (inputElement.getText().equalsIgnoreCase(expectedBrend)) {
+                Thread.sleep(2000);
+                JavascriptExecutor executor = (JavascriptExecutor) driver;
+                executor.executeScript("arguments[0].click();", inputElement);
+                System.out.println(inputElement.getText() + " clickləndi");
+                Thread.sleep(2000);
+                break;
+            }
+        }
+
+
+    }
+
+    @And("Clicks on the {string} button in the item's description")
+    public void clicksOnTheButtonInTheItemSDescription(String ayliq) {
+     List<WebElement> taksitContainer = getElements(By.className("product__price__list__taksit"));
+     String ayliqPrice = getElement(By.className("product__price__list__taksit-price")).getText();
+     System.out.println(ayliqPrice ="AYLIQ PRICE ");
+     WebElement oldPrice = getElement(By.className("old-price"));
+     double evvelkiQiymet = Double.parseDouble(oldPrice.getText());
+     System.out.println(evvelkiQiymet + "EVVELKI QIYMET ");
+        WebElement newPrice = getElement(By.className("new-price"));
+     double yeniQiymet = Double.parseDouble(newPrice.getText());
+     System.out.println(yeniQiymet+ " YENI QIYMET ");
+      for (WebElement element :taksitContainer ) {
+          Double ay =Double.parseDouble(element.getText().substring(0));
+          System.out.println(ay +  "AY");
+          if (!oldPrice.isDisplayed()) {
+              Assert.assertTrue(yeniQiymet ==(yeniQiymet/ay));
+          System.out.println(yeniQiymet/ay);
+          }
+          else {
+              Assert.assertTrue(evvelkiQiymet == (evvelkiQiymet/ay));
+              System.out.println(evvelkiQiymet/ay);
+          }
+      }
+
+
     }
 }
 
