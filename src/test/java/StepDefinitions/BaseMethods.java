@@ -60,4 +60,9 @@ public class BaseMethods {
             default: throw new IllegalArgumentException("Wrong expected condition");
         }
     }
+
+    public static int generateRandomNum(int size){
+        return (int)(size*Math.random());
+    }
+
 }

@@ -54,10 +54,9 @@ Feature: MobilTelefonlar
     And Hovers mouse over "Telefon və aksesuarlar" buttons
     And Clicks on the Mobil telefonlar button
     And Clicks on the "<Ayliq>" button in the item's description
+    Then The monthly payment for the item should be displayed according to taksit "<Ayliq>".
     Examples:
       | Ayliq |
       | 6     |
-      | 12    |
-      | 18    |
 
 

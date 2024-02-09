@@ -7,16 +7,19 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.eo.Do;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.SourceType;
 import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 
 public class BaseSteps extends BaseMethods {
-
+ int index ;
  @Given("User is in {string} website")
     public void userIsInWebsite (String website ){
 
@@ -176,29 +179,52 @@ public class BaseSteps extends BaseMethods {
     }
 
     @And("Clicks on the {string} button in the item's description")
-    public void clicksOnTheButtonInTheItemSDescription(String ayliq) {
-     List<WebElement> taksitContainer = getElements(By.className("product__price__list__taksit"));
-     String ayliqPrice = getElement(By.className("product__price__list__taksit-price")).getText();
-     System.out.println(ayliqPrice ="AYLIQ PRICE ");
-     WebElement oldPrice = getElement(By.className("old-price"));
-     double evvelkiQiymet = Double.parseDouble(oldPrice.getText());
-     System.out.println(evvelkiQiymet + "EVVELKI QIYMET ");
-        WebElement newPrice = getElement(By.className("new-price"));
-     double yeniQiymet = Double.parseDouble(newPrice.getText());
-     System.out.println(yeniQiymet+ " YENI QIYMET ");
-      for (WebElement element :taksitContainer ) {
-          Double ay =Double.parseDouble(element.getText().substring(0));
-          System.out.println(ay +  "AY");
-          if (!oldPrice.isDisplayed()) {
-              Assert.assertTrue(yeniQiymet ==(yeniQiymet/ay));
-          System.out.println(yeniQiymet/ay);
-          }
-          else {
-              Assert.assertTrue(evvelkiQiymet == (evvelkiQiymet/ay));
-              System.out.println(evvelkiQiymet/ay);
-          }
-      }
+    public void clicksOnTheButtonInTheItemSDescription(String ayliq) throws InterruptedException {
+     Thread.sleep(3000); // BU SILINMEYECEK !!!!!!
+     List<WebElement> itemsDescription = new ArrayList<>(getElements(By.className("product__flex-right")));
+//        Random randomGenerator = new Random();
+//        index = randomGenerator.nextInt(itemsDescription.size());
+        index = generateRandomNum(itemsDescription.size());
+        System.out.println(index + " INDEX");
+        WebElement expected = itemsDescription.get(index);
+        System.out.println(  " EXPECTED ELEMENT BASLADI " +"\n" + expected.getText() +"\n" + "EXPECTED ELEMENT BITDI");
+        WebElement itemsTaksitOptions = expected.findElement(By.xpath("//div[2][@class='product__footer']" +
+                        "//div[@class='product__price']//div[@class='product__price__list']" +
+                        "//div[@class='product__price__list__taksit']"));
 
+        List<WebElement>taksits = new ArrayList<>(itemsTaksitOptions.findElements(By.tagName("label")));
+        System.out.println(taksits.size() + " kredit secim (3)");
+        for ( WebElement element : taksits) {
+            if(element.getText().contains(ayliq)){
+                System.out.println(element.getText() + "---------" + ayliq);
+                Actions actions = new Actions(driver);
+                actions.moveToElement(element).click().perform();
+                break;
+            }
+        }
+        Thread.sleep(2000);
+    }
+
+
+    @Then("The monthly payment for the item should be displayed according to taksit {string}.")
+    public void theMonthlyPaymentForTheItemShouldBeDisplayedAccordingToTaksit(String ayliq) throws InterruptedException {
+     Thread.sleep(2000);
+     double taksit = Double.parseDouble(ayliq);
+     List<WebElement> oldPrice = new ArrayList<>(getElements(By.className("old-price")));
+     List<WebElement> newPrice = new ArrayList<>(getElements(By.className("new-price")));
+     List<WebElement>taksitPrice = new ArrayList<>(getElements(By.className("product__price__list__taksit-price")));
+      boolean flag = oldPrice.get(index).isDisplayed();
+      System.out.println(oldPrice.get(index).getText());
+        if(flag){
+        double totalPrice  = Double.parseDouble(oldPrice.get(index).getText().replace("AZN",""));
+        double expected = (totalPrice/taksit);
+        String expectedMountlyPayment = String.valueOf(expected);
+        System.out.println(expectedMountlyPayment + " GOZLENILEN AYLIQ");
+            System.out.println(taksitPrice.get(index).getText() + " ELDE OLAN AYLIQ ");
+            Thread.sleep(20000);
+        Assert.assertTrue(taksitPrice.get(index).getText().contains(expectedMountlyPayment));
+
+        }
 
     }
 }

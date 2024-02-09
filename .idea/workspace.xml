@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82c444ab-f04b-4b85-b199-bc12f329e760" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinitions/BaseMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/BaseMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinitions/BaseSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/BaseSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/mobilTelefonlar.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/mobilTelefonlar.feature" afterDir="false" />
     </list>
@@ -121,15 +121,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Check Qiymət aralığı section in the Mobil Telefonlar Ve Aksesuarlar page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Check credit offers in Telefon Ve Aksesuarlar page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/mobilTelefonlar.feature" />
       <option name="GLUE" value="StepDefinitions driverSession" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Irshad-Project" />
-      <option name="NAME_FILTER" value="^Check Qiymət aralığı section in the Mobil Telefonlar Ve Aksesuarlar page$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Check Qiymət aralığı section in the Mobil Telefonlar Ve Aksesuarlar page$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Check Qiymət aralığı section in the Mobil Telefonlar Ve Aksesuarlar page" />
+      <option name="NAME_FILTER" value="^Check credit offers in Telefon Ve Aksesuarlar page$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Check credit offers in Telefon Ve Aksesuarlar page$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Check credit offers in Telefon Ve Aksesuarlar page" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -156,9 +156,9 @@
       <list>
         <item itemvalue="Cucumber Java.Feature: mobilTelefonlar" />
         <item itemvalue="TestNG.TestRunner" />
+        <item itemvalue="Cucumber Java.Scenario: Check credit offers in Telefon Ve Aksesuarlar page" />
         <item itemvalue="Cucumber Java.Scenario: Check Brend checkbox in the Telefon Ve Aksesuarlar page -  - Example n°1" />
         <item itemvalue="Cucumber Java.Scenario: Check Brend checkbox in the Telefon Ve Aksesuarlar page" />
-        <item itemvalue="Cucumber Java.Scenario: Check Qiymət aralığı section in the Mobil Telefonlar Ve Aksesuarlar page" />
       </list>
     </recent_temporary>
   </component>
