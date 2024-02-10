@@ -7,30 +7,21 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import pom.KataloqPom;
+import pom.MobilTelefonlarPom;
 
 public class MobilTelefonlarSteps  extends BaseMethods {
 
-    @And("Clicks on the {string} button")
-    public void clicksOnTheButton(String telefon) throws InterruptedException {
-        WebElement element = getElement(By.xpath("//*[@class = 'content']//ul//li//a[@aria-label='" + telefon + "']"));
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();", element);
-        Thread.sleep(5000);
-
+    MobilTelefonlarPom mobilTelefonlarPom;
+    public MobilTelefonlarSteps(){
+        mobilTelefonlarPom = mobilTelefonlarPom.getInstance();
     }
 
-    @Then("User should be navigated to  {string} page")
-    public void userShouldBeNavigatedToPage(String page) {
-        String actualPage = getElement(By.xpath("//*[@id ='ProductList']//div//h1")).getText();
-        Assert.assertTrue(actualPage.equalsIgnoreCase(page));
-
-    }
 
     @And("Clicks on the Mobil telefonlar button")
     public void clicksOnTheMobilTelefonlarButton() {
-        WebElement element = getElement(By.xpath("//*[@class='content']//a[@aria-label='Mobil telefonlar']"));
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();", element);
+        WebElement element = getElement(mobilTelefonlarPom.getMobilTelefonlarButton());
+        javascriptExecutor(element);
 
     }
 }

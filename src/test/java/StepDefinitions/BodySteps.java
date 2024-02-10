@@ -7,14 +7,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import pom.BodyPom;
+import pom.HeaderPom;
 
 import java.util.ArrayList;
 
 public class BodySteps extends BaseMethods {
-
+    BodyPom bodyPom;
+    public BodySteps(){
+        bodyPom = BodyPom.getInstance();
+    }
     @When("Clicks on Ayliq Odenish button")
     public void clicksOnButton(){
-        WebElement element = getElement(By.cssSelector(".calculator_popup.header__tools__item.header__tools__item--credit.btn.btn-green-transparent"));
+        WebElement element = getElement(bodyPom.getAylıqOdənisButton());
         element.click();
     }
 
@@ -22,8 +27,7 @@ public class BodySteps extends BaseMethods {
     @And("Clicks on {string} button")
     public void clicksOnButton(String expected) {
         WebElement element = getElement(By.xpath("//*[@class='row']//div//a[@aria-label='"+expected+"']"));
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();", element);
+       javascriptExecutor(element);
 
     }
 

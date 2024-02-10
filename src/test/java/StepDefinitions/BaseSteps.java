@@ -29,14 +29,13 @@ public class BaseSteps extends BaseMethods {
     @When("Clicks on {string} button in the {string}")
     public void clicksOnButtonInTheHeader(String expected, String s2) throws InterruptedException {
         WebElement element = getElement(By.xpath("//div[@class='container-fluid']//ul//li//a[@aria-label='" + expected + "']"));
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();", element);
+        javascriptExecutor(element);
         Thread.sleep(5000);
 
 
     }
     @Then("Should be navigated to {string} page")
-    public void shouldBeNavigatedToPage(String expected) throws InterruptedException {
+    public void shouldBeNavigatedToPage(String expected) {
         String actualUrl = driver.getCurrentUrl();
         switch(expected) {
             case "Kampaniyalar" :
@@ -116,8 +115,7 @@ public class BaseSteps extends BaseMethods {
     public void hoversMouseOverButtons(String kataloqElement) throws InterruptedException {
      Thread.sleep(3000);
         WebElement element = getElement(By.xpath("//*[@class='menu-section']//span//img[@alt='"+kataloqElement+"']"));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(element).perform();
+        actionsMoveToElement(element);
 
 
  }

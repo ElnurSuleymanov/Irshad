@@ -12,10 +12,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import pom.HeaderPom;
 
 import java.util.List;
 
 public class HeaderSteps  extends BaseMethods{
+
+    HeaderPom headerPom;
+    public HeaderSteps(){
+        headerPom = HeaderPom.getInstance();
+    }
+
 
 
 
@@ -23,27 +30,26 @@ public class HeaderSteps  extends BaseMethods{
 
     @When("Hovers mouse over {string} button")
     public void hoversMouseOverButton(String s1) {
-        WebElement element = getElement(By.className("header__top__list__item__selected"));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(element).perform();
+        WebElement element = getElement(headerPom.getLanguageButton());
+       actionsMoveToElement(element);
     }
 
     @Then("Should language options")
     public void shouldLanguageOptions() {
-        WebElement element = getElement(By.xpath("//ul[@class='langs']//li//a[@aria-label]"));
+        WebElement element = getElement(headerPom.getSecondLanguageButton());
         Assert.assertTrue(element.isDisplayed());
     }
 
     @When("Clicks on User profile button")
     public void clicksOnUserProfileButton() {
-        WebElement element = getElement(By.xpath("//div[@class='container-fluid']//ul[2]//li[3]"));
+        WebElement element = getElement(headerPom.getUserProfile());
         element.click();
     }
 
     @Then("User should be navigated to the sighning page")
     public void userShouldBeNavigatedToTheSighningPage() {
         String expectedText = "Giriş";
-        String actualText = getElement(By.className("active")).getText();
+        String actualText = getElement(headerPom.getGirisYazisi()).getText();
         Assert.assertEquals(actualText,expectedText);
     }
 }

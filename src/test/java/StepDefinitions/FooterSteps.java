@@ -15,8 +15,7 @@ public class FooterSteps extends BaseMethods {
 @When("Clicks on {string} button on the section {string}")
     public void clicksOnButtonOntheSection(String socialBTN, String s2) throws InterruptedException {
        WebElement element = getElement(By.xpath("//div[@class='footer__contacts__social__icons']//a[@aria-label ='"+socialBTN.toLowerCase()+"']"));
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();", element);
+       javascriptExecutor(element);
     }
 
     @Then("User in on {string} page")

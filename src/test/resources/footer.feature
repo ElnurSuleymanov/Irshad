@@ -1,8 +1,9 @@
 Feature: Footer
+  Background:
+    Given User is in "irshad.az" website
 
   Scenario Outline: Checking clickability buttons in the Şirkət menu item in the footer
-    Given User is in "irshad.az" website
-    When  Clicks on "<Şirkət menu item>" button in the "Şirkət menu item"
+    Given  Clicks on "<Şirkət menu item>" button in the "Şirkət menu item"
     Then Should be navigated to "<Şirkət menu item>" page
     Examples:
       | Şirkət menu item               |
@@ -16,8 +17,7 @@ Feature: Footer
 
 
   Scenario Outline: Checking clickability buttons in the Müştəri üçün menu item in the footer
-    Given User is in "irshad.az" website
-    When  Clicks on "<Müştəri üçün menu item>" button in the "Müştəri üçün"
+    Given  Clicks on "<Müştəri üçün menu item>" button in the "Müştəri üçün"
     Then Should be navigated to "<Şirkət menu item>" page
     Examples:
       | Müştəri üçün menu item |
@@ -33,8 +33,7 @@ Feature: Footer
 
 @social
   Scenario Outline: Checking social media buttons
-    Given User is in "irshad.az" website
-    When Clicks on "<Social Media>" button on the section "Bizi izleyin"
+    Given Clicks on "<Social Media>" button on the section "Bizi izleyin"
     Then User in on "<Social Media>" page
     Examples:
       | Social Media |

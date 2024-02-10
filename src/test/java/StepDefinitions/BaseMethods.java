@@ -3,6 +3,7 @@ package StepDefinitions;
 import driverSession.CucucmberHook;
 import enums.ExpectedConditionType;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -61,8 +62,20 @@ public class BaseMethods {
         }
     }
 
-    public static int generateRandomNum(int size){
+    protected static int generateRandomNum(int size){
         return (int)(size*Math.random());
     }
+
+    protected void  javascriptExecutor ( WebElement element){
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+    }
+
+    protected void actionsMoveToElement(WebElement element){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element).perform();
+    }
+
+
 
 }
