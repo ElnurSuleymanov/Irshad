@@ -19,9 +19,10 @@ public class MobilTelefonlarSteps  extends BaseMethods {
 
 
     @And("Clicks on the Mobil telefonlar button")
-    public void clicksOnTheMobilTelefonlarButton() {
+    public void clicksOnTheMobilTelefonlarButton() throws InterruptedException {
         WebElement element = getElement(mobilTelefonlarPom.getMobilTelefonlarButton());
         javascriptExecutor(element);
+        Thread.sleep(3000);
 
     }
 }

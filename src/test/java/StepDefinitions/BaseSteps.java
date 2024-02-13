@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.SourceType;
 import org.testng.Assert;
+import pom.BasePom;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,9 +20,14 @@ import java.util.Random;
 
 
 public class BaseSteps extends BaseMethods {
- int index ;
- @Given("User is in {string} website")
-    public void userIsInWebsite (String website ){
+    BasePom basePom;
+     public BaseSteps () {basePom = BasePom.getInstance();}
+    int index;
+    String basketItemName;
+    String favorit;
+
+    @Given("User is in {string} website")
+    public void userIsInWebsite(String website) {
 
     }
 
@@ -34,30 +40,31 @@ public class BaseSteps extends BaseMethods {
 
 
     }
+
     @Then("Should be navigated to {string} page")
     public void shouldBeNavigatedToPage(String expected) {
         String actualUrl = driver.getCurrentUrl();
-        switch(expected) {
-            case "Kampaniyalar" :
+        switch (expected) {
+            case "Kampaniyalar":
                 Assert.assertTrue(actualUrl.contains(expected.toLowerCase()));
                 break;
-            case "Mağazalar" :
+            case "Mağazalar":
                 String expectedMagazalar = "magazalar";
                 Assert.assertTrue(actualUrl.contains(expectedMagazalar.toLowerCase()));
                 break;
-            case "Korporativ" :
+            case "Korporativ":
                 Assert.assertTrue(actualUrl.contains(expected.toLowerCase()));
                 break;
-            case "Samsung" :
+            case "Samsung":
                 Assert.assertTrue(actualUrl.contains(expected.toLowerCase()));
                 break;
-            case "Apple" :
+            case "Apple":
                 Assert.assertTrue(actualUrl.contains(expected.toLowerCase()));
                 break;
-            case "Outlet" :
+            case "Outlet":
                 Assert.assertTrue(actualUrl.contains(expected.toLowerCase()));
                 break;
-            case "Haqqımızda" :
+            case "Haqqımızda":
                 String expectedHaqqimizda = "haqqimizda";
                 Assert.assertTrue(actualUrl.contains(expectedHaqqimizda.toLowerCase()));
                 break;
@@ -68,42 +75,42 @@ public class BaseSteps extends BaseMethods {
                 String expectedSertlerimiz = "sertlerimiz";
                 Assert.assertTrue(actualUrl.contains(expectedSertlerimiz.toLowerCase()));
                 break;
-            case "Çatdırılma qaydaları" :
+            case "Çatdırılma qaydaları":
                 String expectedCatdirilmaQaydalari = "catdirilma-qaydalari";
                 Assert.assertTrue(actualUrl.contains(expectedCatdirilmaQaydalari.toLowerCase()));
                 break;
-            case "Bonuslardan istifadə qaydaları" :
+            case "Bonuslardan istifadə qaydaları":
                 String expectedBonuslardanIstifadeQaydalari = "bonuslardan-istifade-qaydalari";
                 Assert.assertTrue(actualUrl.contains(expectedBonuslardanIstifadeQaydalari.toLowerCase()));
                 break;
-            case "ŞadKart" :
+            case "ŞadKart":
                 String expectedSadKart = "sadkart";
                 Assert.assertTrue(actualUrl.contains(expectedSadKart.toLowerCase()));
                 break;
-            case "Sual-Cavab" :
+            case "Sual-Cavab":
                 Assert.assertTrue(actualUrl.contains(expected.toLowerCase()));
                 break;
-            case "Hissə-hissə ödəniş" :
+            case "Hissə-hissə ödəniş":
                 String expectedHisseHisseOdenis = "hisse-hisse-odenis";
                 Assert.assertTrue(actualUrl.contains(expectedHisseHisseOdenis.toLowerCase()));
                 break;
-            case "Məxfilik siyasəti" :
+            case "Məxfilik siyasəti":
                 String expectedMexfilikSiyaseti = "mexfilik-siyaseti";
                 Assert.assertTrue(actualUrl.contains(expectedMexfilikSiyaseti.toLowerCase()));
                 break;
-            case "Korporativ satışlar" :
+            case "Korporativ satışlar":
                 String expectedKorporativSatislar = "korporativ-satislar";
                 Assert.assertTrue(actualUrl.contains(expectedKorporativSatislar.toLowerCase()));
                 break;
-            case "İstifadə qaydaları" :
+            case "İstifadə qaydaları":
                 String expectedIstifadeGaydalari = "istifade-qaydalari";
                 Assert.assertTrue(actualUrl.contains(expectedIstifadeGaydalari.toLowerCase()));
                 break;
-            case "Bloq" :
+            case "Bloq":
                 Assert.assertTrue(actualUrl.contains(expected.toLowerCase()));
                 break;
-            case "Şikayət və təkliflər" :
-                String expectedSikayetVeTeklifler ="sikayet-ve-teklifler";
+            case "Şikayət və təkliflər":
+                String expectedSikayetVeTeklifler = "sikayet-ve-teklifler";
                 Assert.assertTrue(actualUrl.contains(expectedSikayetVeTeklifler.toLowerCase()));
                 break;
             default:
@@ -111,89 +118,76 @@ public class BaseSteps extends BaseMethods {
                 break;
         }
     }
- @And("Hovers mouse over {string} buttons")
+
+    @And("Hovers mouse over {string} buttons")
     public void hoversMouseOverButtons(String kataloqElement) throws InterruptedException {
-     Thread.sleep(3000);
-        WebElement element = getElement(By.xpath("//*[@class='menu-section']//span//img[@alt='"+kataloqElement+"']"));
+        Thread.sleep(3000);
+        WebElement element = getElement(By.xpath("//*[@class='menu-section']//span//img[@alt='" + kataloqElement + "']"));
         actionsMoveToElement(element);
 
 
- }
+    }
 
     @And("Puts the value from {string} to {string} the price")
-    public void putsTheValueFromToThePrice(String from, String to) throws InterruptedException {
-        Thread.sleep(3000);
-        WebElement priceFilter = driver.findElement(By.xpath("//div[@class='products__filter__item__price']"));
-        Thread.sleep(2000);
-        WebElement startPriceInput = priceFilter.findElement(By.xpath("//input[@placeholder='36 AZN']"));
+    public void putsTheValueFromToThePrice(String from, String to) throws InterruptedException {;
+        WebElement priceFilter = getElement(basePom.getFromToPriceCheckbox());
+        WebElement startPriceInput  = priceFilter.findElement(basePom.getStartPriceInput());
         startPriceInput.clear();
         startPriceInput.sendKeys(String.valueOf(from));
         Thread.sleep(2000);
-        WebElement endPriceInput = priceFilter.findElement(By.xpath("//input[@placeholder='4450 AZN']"));
-        endPriceInput.clear();
+        WebElement endPriceInput = priceFilter.findElement(basePom.getEndPriceInput());
+         endPriceInput.clear();
         endPriceInput.sendKeys(String.valueOf(to));
-        Thread.sleep(3000);
+        Thread.sleep(2000);
 
 
     }
 
     @Then("Items in the page should be ordered according from {string} to {string}")
-    public void itemsInThePageShouldBeOrderedAccordingFromTo(String from, String to)  {
-     List<WebElement> items = new ArrayList<>(getElements(By.cssSelector(".product.first")));
-     List<WebElement> productPrice = getElements(By.cssSelector(".new-price"));
-     double price ;
-     double startPrice = Double.parseDouble(from);
-     double endPrice  = Double.parseDouble(to);
-     for ( WebElement element : productPrice){
-         price = Double.parseDouble(element.getText().replace("AZN",""));
+    public void itemsInThePageShouldBeOrderedAccordingFromTo(String from, String to) {
+        List<WebElement> items = new ArrayList<>(getElements(basePom.getItems()));
+        List<WebElement> productPrice = getElements(basePom.getNewPriceProduct());
+        double price;
+        double startPrice = Double.parseDouble(from);
+        double endPrice = Double.parseDouble(to);
+        for (WebElement element : productPrice) {
+            price = Double.parseDouble(element.getText().replace("AZN", ""));
 
-         Assert.assertTrue((startPrice < price) && (price < endPrice));
-     }
+            Assert.assertTrue((startPrice <= price) && (price <= endPrice));
+        }
     }
 
     @And("Choose {string} in the Brend checkbox")
     public void chooseInTheBrendCheckbox(String expectedBrend) throws InterruptedException {
-        Thread.sleep(2000);
-        WebElement container = getElement(By.xpath("//*[@id='ProductList']/div/div/div[1]/form/fieldset[3]/div"));
-        Thread.sleep(2000);
-        List<WebElement> productList = container.findElements(By.tagName("label"));
-        System.out.println(productList.size());
-        Thread.sleep(2000);
-
+        WebElement container = getElement(basePom.getBrandContainer());
+        List<WebElement> productList = container.findElements(basePom.getBrandContainerElements());
         for (WebElement inputElement : productList) {
-            Thread.sleep(2000);
-            System.out.println(inputElement.getText());
             if (inputElement.getText().equalsIgnoreCase(expectedBrend)) {
-                Thread.sleep(2000);
-                JavascriptExecutor executor = (JavascriptExecutor) driver;
-                executor.executeScript("arguments[0].click();", inputElement);
-                System.out.println(inputElement.getText() + " clickləndi");
-                Thread.sleep(2000);
+                javascriptExecutor(inputElement);
                 break;
             }
         }
+        Thread.sleep(2000);
 
 
     }
 
     @And("Clicks on the {string} button in the item's description")
     public void clicksOnTheButtonInTheItemSDescription(String ayliq) throws InterruptedException {
-     Thread.sleep(3000); // BU SILINMEYECEK !!!!!!
-     List<WebElement> itemsDescription = new ArrayList<>(getElements(By.className("product__flex-right")));
-//        Random randomGenerator = new Random();
-//        index = randomGenerator.nextInt(itemsDescription.size());
+        Thread.sleep(3000); // BU SILINMEYECEK !!!!!!
+        List<WebElement> itemsDescription = new ArrayList<>(getElements(By.className("product__flex-right")));
         index = generateRandomNum(itemsDescription.size());
         System.out.println(index + " INDEX");
         WebElement expected = itemsDescription.get(index);
-        System.out.println(  " EXPECTED ELEMENT BASLADI " +"\n" + expected.getText() +"\n" + "EXPECTED ELEMENT BITDI");
+        System.out.println(" EXPECTED ELEMENT BASLADI " + "\n" + expected.getText() + "\n" + "EXPECTED ELEMENT BITDI");
         WebElement itemsTaksitOptions = expected.findElement(By.xpath("//div[2][@class='product__footer']" +
-                        "//div[@class='product__price']//div[@class='product__price__list']" +
-                        "//div[@class='product__price__list__taksit']"));
+                "//div[@class='product__price']//div[@class='product__price__list']" +
+                "//div[@class='product__price__list__taksit']"));
 
-        List<WebElement>taksits = new ArrayList<>(itemsTaksitOptions.findElements(By.tagName("label")));
+        List<WebElement> taksits = new ArrayList<>(itemsTaksitOptions.findElements(By.tagName("label")));
         System.out.println(taksits.size() + " kredit secim (3)");
-        for ( WebElement element : taksits) {
-            if(element.getText().contains(ayliq)){
+        for (WebElement element : taksits) {
+            if (element.getText().contains(ayliq)) {
                 System.out.println(element.getText() + "---------" + ayliq);
                 Actions actions = new Actions(driver);
                 actions.moveToElement(element).click().perform();
@@ -206,28 +200,158 @@ public class BaseSteps extends BaseMethods {
 
     @Then("The monthly payment for the item should be displayed according to taksit {string}.")
     public void theMonthlyPaymentForTheItemShouldBeDisplayedAccordingToTaksit(String ayliq) throws InterruptedException {
-     Thread.sleep(2000);
-     double taksit = Double.parseDouble(ayliq);
-     List<WebElement> oldPrice = new ArrayList<>(getElements(By.className("old-price")));
-     List<WebElement> newPrice = new ArrayList<>(getElements(By.className("new-price")));
-     List<WebElement>taksitPrice = new ArrayList<>(getElements(By.className("product__price__list__taksit-price")));
-      boolean flag = oldPrice.get(index).isDisplayed();
-      System.out.println(oldPrice.get(index).getText());
-        if(flag){
-        double totalPrice  = Double.parseDouble(oldPrice.get(index).getText().replace("AZN",""));
-        double expected = (totalPrice/taksit);
-        String expectedMountlyPayment = String.valueOf(expected);
-        System.out.println(expectedMountlyPayment + " GOZLENILEN AYLIQ");
+        Thread.sleep(2000);
+        double taksit = Double.parseDouble(ayliq);
+        List<WebElement> oldPrice = new ArrayList<>(getElements(By.className("old-price")));
+        List<WebElement> newPrice = new ArrayList<>(getElements(By.className("new-price")));
+        List<WebElement> taksitPrice = new ArrayList<>(getElements(By.className("product__price__list__taksit-price")));
+        boolean flag = oldPrice.get(index).isDisplayed();
+        System.out.println(oldPrice.get(index).getText());
+        if (flag) {
+            double totalPrice = Double.parseDouble(oldPrice.get(index).getText().replace("AZN", ""));
+            double expected = (totalPrice / taksit);
+            String expectedMountlyPayment = String.valueOf(expected);
+            System.out.println(expectedMountlyPayment + " GOZLENILEN AYLIQ");
             System.out.println(taksitPrice.get(index).getText() + " ELDE OLAN AYLIQ ");
             Thread.sleep(20000);
-        Assert.assertTrue(taksitPrice.get(index).getText().contains(expectedMountlyPayment));
+            Assert.assertTrue(taksitPrice.get(index).getText().contains(expectedMountlyPayment));
 
         }
 
     }
+
+
+    @When("Click to discount checkbox")
+    public void clickToDiscountCheckbox() throws InterruptedException {
+        getElement(basePom.getEndrimdeOlanButton()).click();
+        Thread.sleep(2000);
+    }
+
+    @Then("Only discounted items are visible")
+    public void onlyDiscountedItemsAreVisible() throws InterruptedException {
+        List<WebElement> list = getElements(basePom.getOldPrice());
+        boolean flag = false;
+        for (WebElement item : list) {
+            if (item.isDisplayed()) {
+                flag = true;
+            } else {
+                System.out.println("Error");
+                break;
+            }
+        }
+        Assert.assertTrue(flag);
+
+    }
+
+
+    @When("User clicks add to card btn for random item")
+    public void userClicksAddToCardBtnForRandomItem() throws InterruptedException {
+        List<WebElement> list = getElements(basePom.getSebeteElaveEtButtons());
+        List<WebElement> textList = getElements(basePom.getItemName());
+        int randomNum = getRandomNum(list.size());
+        WebElement element = list.get(randomNum);
+        javascriptExecutor(element);
+        Thread.sleep(6000);
+        basketItemName = textList.get(randomNum).getText();
+    }
+
+    @And("Clicks to basket button")
+    public void clicksToBasketButton() throws InterruptedException {
+        WebElement element = getElement(basePom.getCloseSebetPopUp());
+        javascriptExecutor(element);
+        Thread.sleep(3000);
+       WebElement sebet =  getElement(basePom.getSebetButton());
+       javascriptExecutor(sebet);
+        Thread.sleep(3000);
+    }
+
+    @And("Click the Delete button")
+    public void clickTheDeleteButton() throws InterruptedException {
+        getElement(basePom.getDeleteItemButton()).click();
+    }
+
+    @Then("selected item should be shown in basket")
+    public void selectedItemShouldBeShownInBasket() {
+        List<WebElement> itemsTitle = new ArrayList<>(getElements(basePom.getItemName()));
+        for (WebElement element : itemsTitle) {
+            if (element.getText().equals(basketItemName)) {
+                Assert.assertTrue(element.isDisplayed());
+                break;
+            }
+        }
+
+    }
+
+
+    @When("User clicks favorit btn for random item")
+    public void userClicksFavoritBtnForRandomItem() throws InterruptedException {
+
+        List<WebElement> list = getElements(basePom.getBeyendimButtonAboveItem());
+        List<WebElement> textList = getElements(basePom.getItemName());
+        int randomNum = getRandomNum(list.size());
+        WebElement element = list.get(randomNum);
+        javascriptExecutor(element);
+        Thread.sleep(8000);
+        favorit = textList.get(randomNum).getText();
+    }
+
+    @And("Clicks to favorit button")
+    public void clicksToFavoritButton() throws InterruptedException {
+        Thread.sleep(4000);
+        WebElement element = getElement(basePom.getBeyendimButton());
+        javascriptExecutor(element);
+        Thread.sleep(2000);
+    }
+
+    @Then("selected item should be shown in favorit")
+    public void selectedItemShouldBeShownInFavorit() throws InterruptedException {
+        Thread.sleep(2000);
+        String actualText = getElement(basePom.getItemName()).getText();
+        Thread.sleep(2000);
+        Assert.assertEquals(actualText, favorit);
+    }
+
+
+    @And("Click the favorite button to delete")
+    public void clickTheFavoriteButtonToDelete() throws InterruptedException {
+        Thread.sleep(2000);
+      WebElement element =   getElement(basePom.getBeyendimButtonAboveItem());
+      javascriptExecutor(element);
+    }
+
+    @Then("Product has been removed from the page")
+    public void productHasBeenRemovedFromThePage() throws InterruptedException {
+        boolean silinib = false;
+        List<WebElement> elements = getElements(By.className("container_fluid"));
+        for (WebElement item : elements) {
+            if ((item.getText() == favorit) && (item.getText() == basketItemName)) {
+                silinib = true;
+                break;
+            }
+        }
+        Assert.assertFalse(silinib);
+
+    }
+
+    @Then("Items in the {string} page should be ordered according to the {string} checkbox")
+    public void itemsInThePageShouldBeOrderedAccordingToTheCheckbox(String page, String brand) {
+        List<WebElement> itemTitles = getElements(basePom.getItemName());
+        if(page.equalsIgnoreCase("Telefon Ve Aksesuarlar") && brand.equalsIgnoreCase("Apple")) {
+            brand = "iPhone";
+            for (WebElement element : itemTitles) {
+                Assert.assertTrue(element.getText().contains(brand));
+
+            }
+        }else{
+            for (WebElement element : itemTitles) {
+                Assert.assertTrue(element.getText().contains(brand));
+
+            }
+
+
+        }
+    }
 }
-
-
 
 
 

@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82c444ab-f04b-4b85-b199-bc12f329e760" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinitions/BaseMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/BaseMethods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pom/BasePom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinitions/BaseSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/BaseSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinitions/HeaderSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/HeaderSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pom/HeaderPom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pom/HeaderPom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/header.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/header.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinitions/KataloqSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/KataloqSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinitions/MobilTelefonlarSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/MobilTelefonlarSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/body.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/body.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/footer.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/footer.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/header.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/header.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/kataloq.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/kataloq.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/mobilTelefonlar.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/mobilTelefonlar.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/sebeteElavəEt.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/sebeteElavəEt.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +55,7 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/Irshad-Project/src/test&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/user/IdeaProjects/Irshad-Project/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
@@ -59,18 +66,20 @@
       <recent name="C:\Users\user\IdeaProjects\Irshad-Project\src\test\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\IdeaProjects\Irshad-Project\src\test\resources\features" />
       <recent name="C:\Users\user\IdeaProjects\Irshad-Project\src\test\resources\feature" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Availability of language in options">
-    <configuration name="Feature: mobilTelefonlar" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Delete item to favorit successfully in Telefon Ve Aksesuarlar page">
+    <configuration name="Scenario: Adding item to basket successfully" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/mobilTelefonlar.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/mobilTelefonlar.feature" />
       <option name="GLUE" value="StepDefinitions driverSession" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Irshad-Project" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: mobilTelefonlar" />
+      <option name="NAME_FILTER" value="^Adding item to basket successfully$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Adding item to basket successfully$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Adding item to basket successfully" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -82,14 +91,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Availability of language in options" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Adding item to favorit successfully in Telefon Ve Aksesuarlar page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/header.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/mobilTelefonlar.feature" />
+      <option name="GLUE" value="StepDefinitions driverSession" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Irshad-Project" />
-      <option name="NAME_FILTER" value="^Availability of language in options$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Availability of language in options$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Availability of language in options" />
+      <option name="NAME_FILTER" value="^Adding item to favorit successfully in Telefon Ve Aksesuarlar page$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Adding item to favorit successfully in Telefon Ve Aksesuarlar page$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Adding item to favorit successfully in Telefon Ve Aksesuarlar page" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -101,15 +111,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Check Brend checkbox in the Telefon Ve Aksesuarlar page -  - Example n°1" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Delete item to basket successfully" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/mobilTelefonlar.feature:45" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/mobilTelefonlar.feature" />
       <option name="GLUE" value="StepDefinitions driverSession" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Irshad-Project" />
-      <option name="NAME_FILTER" value="^Check Brend checkbox in the Telefon Ve Aksesuarlar page$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Check Brend checkbox in the Telefon Ve Aksesuarlar page$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Check Brend checkbox in the Telefon Ve Aksesuarlar page -  - Example n°1" />
+      <option name="NAME_FILTER" value="^Delete item to basket successfully$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Delete item to basket successfully$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Delete item to basket successfully" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -121,15 +131,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Check credit offers in Telefon Ve Aksesuarlar page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Delete item to favorit successfully in Telefon Ve Aksesuarlar page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/mobilTelefonlar.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/mobilTelefonlar.feature" />
       <option name="GLUE" value="StepDefinitions driverSession" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Irshad-Project" />
-      <option name="NAME_FILTER" value="^Check credit offers in Telefon Ve Aksesuarlar page$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Check credit offers in Telefon Ve Aksesuarlar page$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Check credit offers in Telefon Ve Aksesuarlar page" />
+      <option name="NAME_FILTER" value="^Delete item to favorit successfully in Telefon Ve Aksesuarlar page$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Delete item to favorit successfully in Telefon Ve Aksesuarlar page$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Delete item to favorit successfully in Telefon Ve Aksesuarlar page" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -154,11 +164,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Scenario: Availability of language in options" />
+        <item itemvalue="Cucumber Java.Scenario: Delete item to favorit successfully in Telefon Ve Aksesuarlar page" />
         <item itemvalue="TestNG.TestRunner" />
-        <item itemvalue="Cucumber Java.Feature: mobilTelefonlar" />
-        <item itemvalue="Cucumber Java.Scenario: Check credit offers in Telefon Ve Aksesuarlar page" />
-        <item itemvalue="Cucumber Java.Scenario: Check Brend checkbox in the Telefon Ve Aksesuarlar page -  - Example n°1" />
+        <item itemvalue="Cucumber Java.Scenario: Adding item to favorit successfully in Telefon Ve Aksesuarlar page" />
+        <item itemvalue="Cucumber Java.Scenario: Delete item to basket successfully" />
+        <item itemvalue="Cucumber Java.Scenario: Adding item to basket successfully" />
       </list>
     </recent_temporary>
   </component>

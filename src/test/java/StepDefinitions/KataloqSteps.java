@@ -10,9 +10,13 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import pom.KataloqPom;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class KataloqSteps extends BaseMethods {
     KataloqPom kataloqPom;
-    public KataloqSteps(){
+
+    public KataloqSteps() {
         kataloqPom = KataloqPom.getInstance();
     }
 
@@ -63,5 +67,4 @@ public class KataloqSteps extends BaseMethods {
         Assert.assertTrue(actualPage.equalsIgnoreCase(page));
 
     }
-
 }
