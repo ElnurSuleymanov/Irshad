@@ -27,8 +27,15 @@ Feature: MobilTelefonlar
       | Apple   |
       | Samsung |
       | Xiaomi  |
+@MovcuddurCheckBox
+    Scenario Outline: Check Mövcuddur checkbox in the Telefon Ve Aksesuarlar page
+      When Choose "<Mövcuddur>" in the Mövcuddur checkbox
+      Then Items should be ordered according to the "<Mövcuddur>" checkbox
+      Examples:
+        | Mövcuddur     |
+        | Yalnız Onlayn |
 
-
+  @taksit
   Scenario Outline: Check credit offers in Telefon Ve Aksesuarlar page
     When Clicks on the "<Ayliq>" button in the item's description
     Then The monthly payment for the item should be displayed according to taksit "<Ayliq>".
@@ -55,7 +62,7 @@ Feature: MobilTelefonlar
     And Click the Delete button
     And Clicks to basket button
     Then Product has been removed from the page
-    #
+
 
 
   @favorit
@@ -73,6 +80,6 @@ Feature: MobilTelefonlar
     And Click the favorite button to delete
     And Clicks to favorit button
     Then Product has been removed from the page
-    #
+
 
 

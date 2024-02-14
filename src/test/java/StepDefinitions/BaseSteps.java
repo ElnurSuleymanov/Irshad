@@ -46,6 +46,7 @@ public class BaseSteps extends BaseMethods {
         String actualUrl = driver.getCurrentUrl();
         switch (expected) {
             case "Kampaniyalar":
+
                 Assert.assertTrue(actualUrl.contains(expected.toLowerCase()));
                 break;
             case "Mağazalar":
@@ -322,7 +323,7 @@ public class BaseSteps extends BaseMethods {
     @Then("Product has been removed from the page")
     public void productHasBeenRemovedFromThePage() throws InterruptedException {
         boolean silinib = false;
-        List<WebElement> elements = getElements(By.className("container_fluid"));
+        List<WebElement> elements = getElements(basePom.getPageContainer());
         for (WebElement item : elements) {
             if ((item.getText() == favorit) && (item.getText() == basketItemName)) {
                 silinib = true;
@@ -351,7 +352,39 @@ public class BaseSteps extends BaseMethods {
 
         }
     }
-}
+
+    @When("Choose {string} in the Mövcuddur checkbox")
+    public void chooseInTheMovcuddurCheckbox(String Mövcuddur) throws InterruptedException {
+   WebElement container = getElement(By.xpath("//*[@id='ProductList']/div/div/div[1]/form/fieldset[4]/div"));
+   List<WebElement> productList = container.findElements(By.tagName("label"));
+        for (WebElement inputElement : productList) {
+            if (inputElement.getText().equalsIgnoreCase(Mövcuddur)) {
+                javascriptExecutor(inputElement);
+                break;
+            }
+        }
+        Thread.sleep(10000);
+
+    }
+
+    @Then("Items should be ordered according to the {string} checkbox")
+    public void itemsShouldBeOrderedAccordingToTheCheckbox(String Movcuddur) {
+        List<WebElement> itemTitles = getElements(basePom.getItems());
+        if (Movcuddur.equalsIgnoreCase("Yalnız Onlayn")){
+            for (WebElement element : itemTitles) {
+                WebElement element1 =  element.findElement(By.xpath("//div[@class ='product__label'][1]"));
+                System.out.println(element1 + "aaaa" +  Movcuddur);
+                Assert.assertTrue(element1.getText().contains(Movcuddur));
+
+            }
+        }
+
+
+
+        }
+    }
+
+
 
 
 

@@ -38,6 +38,7 @@ public class BasePom {
     public By getDeleteItemButton() {return deleteItemButton;}
     public By getBeyendimButtonAboveItem() {return beyendimButtonAboveItem;}
     public By getBeyendimButton() {return beyendimButton;}
+    public By getPageContainer() {return pageContainer;}
 
     private final By items = By.cssSelector(".product.first");
     private final By newPriceProduct = By.cssSelector(".new-price");
@@ -52,6 +53,7 @@ public class BasePom {
     private final By deleteItemButton = (By.cssSelector(".basket__content__item__delete"));
     private final By beyendimButtonAboveItem = By.className("to-wishlist");
     private final By beyendimButton = By.xpath("/html/body/header/div[2]/div[3]/a[2]");
+    private final By pageContainer = By.className("container_fluid");
 
 
 

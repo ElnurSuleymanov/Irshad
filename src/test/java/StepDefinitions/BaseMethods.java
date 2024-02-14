@@ -17,7 +17,7 @@ public class BaseMethods {
     WebDriverWait wait ;
     protected WebDriver driver;
     {
-        driver = CucucmberHook.driver;
+        driver = CucucmberHook.driver.get();
     }
 
 
