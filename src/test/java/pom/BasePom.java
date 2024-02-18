@@ -25,10 +25,10 @@ public class BasePom {
     private final By fromToPriceCheckbox = By.xpath("//div[@class='products__filter__item__price']");
     private final By startPriceInput = By.xpath("//div[@class='products__filter__item__price']//input[1]");
     private final By endPriceInput = By.xpath("//div[@class='products__filter__item__price']//input[2]");
-    public By getBrandContainer() {return brandContainer;}
+
     public By getNewPriceProduct() {return newPriceProduct;}
     public By getItems() {return items;}
-    public By getBrandContainerElements() {return brandContainerElements;}
+
     public By getItemName() {return itemName;}
     public By getEndrimdeOlanButton() {return endrimdeOlanButton;}
     public By getOldPrice() {return oldPrice;}
@@ -42,8 +42,8 @@ public class BasePom {
 
     private final By items = By.cssSelector(".product.first");
     private final By newPriceProduct = By.cssSelector(".new-price");
-    private final By brandContainer = By.xpath("//*[@id='ProductList']/div/div/div[1]/form/fieldset[3]/div");
-    private final By brandContainerElements = By.tagName("label");
+
+
     private final By itemName = By.className("product__name");
     private final By endrimdeOlanButton = By.xpath("//*[@id=\"ProductList\"]/div/div/div[2]/div[1]/div[2]/label");
     private final By oldPrice = By.className("old-price");

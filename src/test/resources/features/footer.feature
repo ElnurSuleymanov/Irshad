@@ -1,7 +1,7 @@
 Feature: Footer
   Background:
     Given User is in "irshad.az" website
-
+@footer
   Scenario Outline: Checking clickability buttons in the Şirkət menu item in the footer
     Given  Clicks on "<Şirkət menu item>" button in the "Şirkət menu item"
     Then Should be navigated to "<Şirkət menu item>" page
@@ -15,7 +15,7 @@ Feature: Footer
       | Çatdırılma qaydaları           |
       | Bonuslardan istifadə qaydaları |
 
-
+@footer
   Scenario Outline: Checking clickability buttons in the Müştəri üçün menu item in the footer
     Given  Clicks on "<Müştəri üçün menu item>" button in the "Müştəri üçün"
     Then Should be navigated to "<Şirkət menu item>" page

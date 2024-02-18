@@ -1,4 +1,5 @@
 package StepDefinitions;
+import enums.ExpectedConditionType;
 import io.cucumber.java.bs.A;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -120,6 +121,8 @@ public class BaseSteps extends BaseMethods {
         }
     }
 
+
+
     @And("Hovers mouse over {string} buttons")
     public void hoversMouseOverButtons(String kataloqElement) throws InterruptedException {
         Thread.sleep(3000);
@@ -158,20 +161,7 @@ public class BaseSteps extends BaseMethods {
         }
     }
 
-    @And("Choose {string} in the Brend checkbox")
-    public void chooseInTheBrendCheckbox(String expectedBrend) throws InterruptedException {
-        WebElement container = getElement(basePom.getBrandContainer());
-        List<WebElement> productList = container.findElements(basePom.getBrandContainerElements());
-        for (WebElement inputElement : productList) {
-            if (inputElement.getText().equalsIgnoreCase(expectedBrend)) {
-                javascriptExecutor(inputElement);
-                break;
-            }
-        }
-        Thread.sleep(2000);
 
-
-    }
 
     @And("Clicks on the {string} button in the item's description")
     public void clicksOnTheButtonInTheItemSDescription(String ayliq) throws InterruptedException {
@@ -334,24 +324,7 @@ public class BaseSteps extends BaseMethods {
 
     }
 
-    @Then("Items in the {string} page should be ordered according to the {string} checkbox")
-    public void itemsInThePageShouldBeOrderedAccordingToTheCheckbox(String page, String brand) {
-        List<WebElement> itemTitles = getElements(basePom.getItemName());
-        if(page.equalsIgnoreCase("Telefon Ve Aksesuarlar") && brand.equalsIgnoreCase("Apple")) {
-            brand = "iPhone";
-            for (WebElement element : itemTitles) {
-                Assert.assertTrue(element.getText().contains(brand));
 
-            }
-        }else{
-            for (WebElement element : itemTitles) {
-                Assert.assertTrue(element.getText().contains(brand));
-
-            }
-
-
-        }
-    }
 
     @When("Choose {string} in the Mövcuddur checkbox")
     public void chooseInTheMovcuddurCheckbox(String Mövcuddur) throws InterruptedException {
@@ -370,18 +343,20 @@ public class BaseSteps extends BaseMethods {
     @Then("Items should be ordered according to the {string} checkbox")
     public void itemsShouldBeOrderedAccordingToTheCheckbox(String Movcuddur) {
         List<WebElement> itemTitles = getElements(basePom.getItems());
-        if (Movcuddur.equalsIgnoreCase("Yalnız Onlayn")){
+        if (Movcuddur.equalsIgnoreCase("Yalnız Onlayn")) {
             for (WebElement element : itemTitles) {
-                WebElement element1 =  element.findElement(By.xpath("//div[@class ='product__label'][1]"));
-                System.out.println(element1 + "aaaa" +  Movcuddur);
-                Assert.assertTrue(element1.getText().contains(Movcuddur));
+                WebElement element1 = element.findElement(By.xpath("//div[@class ='product__label'][1]"));
+                Assert.assertTrue(element1.getText().equals("Yalnız onlayn sifariş"));
 
             }
+        } else if (Movcuddur.equalsIgnoreCase("Mağazada")) {
+            for (WebElement element : itemTitles) {
+                WebElement element1 = element.findElement(By.xpath("//div[@class ='product__labels']//div[1]"));
+                Assert.assertTrue(element1.getText().contains("Stokda"));
+            }
+
         }
-
-
-
-        }
+    }
     }
 
 

@@ -52,5 +52,6 @@ public class HeaderSteps  extends BaseMethods{
         String actualText = getElement(headerPom.getGirisYazisi()).getText();
         Assert.assertEquals(actualText,expectedText);
     }
+
 }
 

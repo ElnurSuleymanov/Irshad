@@ -6,13 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="82c444ab-f04b-4b85-b199-bc12f329e760" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinitions/BaseMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/BaseMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinitions/BaseSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/BaseSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinitions/BodySteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/BodySteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinitions/HeaderSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/HeaderSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinitions/MobilTelefonlarSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/MobilTelefonlarSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/driverSession/CucucmberHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/driverSession/CucucmberHook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pom/BasePom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pom/BasePom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pom/BodyPom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pom/BodyPom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pom/MobilTelefonlarPom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pom/MobilTelefonlarPom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/body.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/body.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/footer.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/footer.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/header.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/header.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/mobilTelefonlar.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/mobilTelefonlar.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/sebeteElavəEt.feature" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +92,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Scenario: Check Akkumulyatorunhecmi checkbox in the Telefon Ve Aksesuarlar page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/mobilTelefonlar.feature" />
+      <option name="GLUE" value="StepDefinitions driverSession" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Irshad-Project" />
+      <option name="NAME_FILTER" value="^Check Akkumulyatorunhecmi checkbox in the Telefon Ve Aksesuarlar page$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Check Akkumulyatorunhecmi checkbox in the Telefon Ve Aksesuarlar page$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Check Akkumulyatorunhecmi checkbox in the Telefon Ve Aksesuarlar page" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Scenario: Check Mövcuddur checkbox in the Telefon Ve Aksesuarlar page -  - Example n°1" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/mobilTelefonlar.feature:36" />
@@ -126,26 +152,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Delete item to favorit successfully in Telefon Ve Aksesuarlar page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/mobilTelefonlar.feature" />
-      <option name="GLUE" value="StepDefinitions driverSession" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="Irshad-Project" />
-      <option name="NAME_FILTER" value="^Delete item to favorit successfully in Telefon Ve Aksesuarlar page$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Delete item to favorit successfully in Telefon Ve Aksesuarlar page$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Delete item to favorit successfully in Telefon Ve Aksesuarlar page" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestRunner" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Irshad-Project" />
       <option name="PACKAGE_NAME" value="" />
@@ -160,10 +166,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.TestRunner" />
+        <item itemvalue="Cucumber Java.Scenario: Check Akkumulyatorunhecmi checkbox in the Telefon Ve Aksesuarlar page" />
         <item itemvalue="Cucumber Java.Feature: mobilTelefonlar" />
         <item itemvalue="Cucumber Java.Scenario: Check Mövcuddur checkbox in the Telefon Ve Aksesuarlar page" />
         <item itemvalue="Cucumber Java.Scenario: Check Mövcuddur checkbox in the Telefon Ve Aksesuarlar page -  - Example n°1" />
-        <item itemvalue="Cucumber Java.Scenario: Delete item to favorit successfully in Telefon Ve Aksesuarlar page" />
       </list>
     </recent_temporary>
   </component>

@@ -18,8 +18,11 @@ public class BodyPom {
     public By getAylıqOdənisButton() {
         return aylıqOdənisButton;
     }
+    public By getBizeMesajGonderinPopUp() {return bizeMesajGonderinPopUp;}
 
     private final By aylıqOdənisButton = By.cssSelector(".calculator_popup.header__tools__item.header__tools__item--credit.btn.btn-green-transparent");
+    private final By bizeMesajGonderinPopUp = By.id("jcont");
+
 
 
 }

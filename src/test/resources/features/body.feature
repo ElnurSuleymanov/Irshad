@@ -1,5 +1,5 @@
 Feature: Body
-
+@Ayliq
   Scenario Outline: Check Ayliq odenish button in the homepage
     Given User is in "irshad.az" website
     When Clicks on Ayliq Odenish button
@@ -10,3 +10,21 @@ Feature: Body
       | Million            |
       | E-pul              |
       | Hesab.az           |
+
+
+ @ChatBox
+  Scenario: Chatbox yoxlanilmasi
+    Given User is in "irshad.az" website
+    Then Chatbox achildimi
+
+
+@IrshadButton
+  Scenario: Checking the irshad button
+    Given User is in "irshad.az" website
+    When  User click Kampaniyalar button
+    And User click irshad button
+    Then Website is being updated
+
+
+
+

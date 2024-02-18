@@ -12,7 +12,7 @@ import java.util.List;
 
 @CucumberOptions(
         features = "classpath:features",
-        tags = "@MovcuddurCheckBox or @discount or @deleteItem",
+        tags = "@footer",
         plugin =  {"pretty" , "html:target/cucumber-reports/report.html"}
 )
 public class TestRunner extends AbstractTestNGCucumberTests  {
@@ -27,11 +27,6 @@ public class TestRunner extends AbstractTestNGCucumberTests  {
     @AfterClass
     public void afterClass(){
         System.out.println("TEST BITDI");
-//        File reportOutputDirectory = new File("target");
-//        List<String>jsonFiles = new ArrayList<>();
-//        jsonFiles.add("target/cucumber.json");
-//        Configuration configuration = new Configuration( reportOutputDirectory , "Irshad-Project");
-
 
     }
 
